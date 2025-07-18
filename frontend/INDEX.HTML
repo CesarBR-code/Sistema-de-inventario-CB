@@ -38,15 +38,31 @@
     <section id="products">
       <h2>Gestión de Productos</h2>
       <form id="productForm">
-        <input type="text" name="name" placeholder="Nombre del producto" required>
-        <input type="text" name="code" placeholder="Código" required>
-        <input type="text" name="category" placeholder="Categoría">
-        <input type="text" name="provider" placeholder="Proveedor">
-        <input type="number" name="price" placeholder="Precio">
-        <input type="number" name="quantity" placeholder="Cantidad">
-        <button type="submit">Registrar</button>
+        <input type="text" id="nombre" placeholder="Nombre del producto" required>
+        <input type="text" id="codigo" placeholder="Código" required>
+        <input type="number" id="id_categoria" placeholder="ID Categoría" required>
+        <input type="number" id="id_proveedor" placeholder="ID Proveedor" required>
+        <input type="number" id="precio" placeholder="Precio" required>
+        <input type="number" id="cantidad" placeholder="Cantidad" required>
+        <button type="submit" id="submitBtn">Registrar</button>
       </form>
-      <div id="productList"></div>
+
+      <table id="tablaProductos">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Código</th>
+            <th>ID Categoría</th>
+            <th>ID Proveedor</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se insertan los productos dinámicamente -->
+        </tbody>
+      </table>
     </section>
 
     <section id="stock">

@@ -1,2 +1,4 @@
-npm init -y
-npm install express mysql2
+npm init -y (Inicializar node)
+npm install express mysql2 (Instalar)
+
+node app.js

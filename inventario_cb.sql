@@ -122,6 +122,29 @@ CREATE TABLE `usuarios` (
   `fecha_creacion` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+
+--
+-- Datos de ejemplo
+--
+
+-- Inserta categorías de ejemplo
+INSERT INTO categorias (nombre_categoria) VALUES 
+('Electrónica'), ('Papelería'), ('Limpieza');
+
+-- Inserta proveedores de ejemplo
+INSERT INTO proveedores (nombre, telefono, correo, direccion) VALUES
+('Proveedor Uno', '3201234567', 'contacto1@proveedor.com', 'Cra 1 #10-20'),
+('Proveedor Dos', '3109876543', 'contacto2@proveedor.com', 'Calle 5 #11-21');
+
+-- Inserta roles de ejemplo
+INSERT INTO roles (nombre_rol) VALUES 
+('Administrador'), ('Empleado'), ('Supervisor');
+
+-- Inserta un usuario de prueba (opcional, si quieres hacer pruebas avanzadas)
+INSERT INTO usuarios (nombre, correo, contraseña, id_rol, estado) VALUES
+('Usuario Admin', 'admin@cb.com', '12345', 1, 1);
+
+
 --
 -- Índices para tablas volcadas
 --
