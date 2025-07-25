@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<!--
+    Vista principal de la aplicación de inventario.
+    Contiene un formulario para registrar nuevos productos y una tabla para listar los productos existentes.
+    Esta FXML se asocia a la clase controller.InventoryController.
+-->
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.InventoryController">
+    <!-- Título de la aplicación -->
+    <top>
+        <Label text="Sistema de Inventario" style="-fx-font-size: 18px; -fx-font-weight: bold;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+    <!-- Cuerpo principal -->
+    <center>
+        <VBox spacing="10">
+    		<padding>
+        		<Insets top="10" right="10" bottom="10" left="10"/>
+    		</padding>
+
+            <!-- Formulario de registro -->
+            <TitledPane text="Registrar Producto" expanded="true">
+                <content>
+                    <GridPane hgap="10" vgap="10">
+					    <padding>
+					        <Insets top="10" right="10" bottom="10" left="10"/>
+					    </padding>
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="20"/>
+                            <ColumnConstraints percentWidth="30"/>
+                            <ColumnConstraints percentWidth="20"/>
+                            <ColumnConstraints percentWidth="30"/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="30"/>
+                            <RowConstraints minHeight="30"/>
+                            <RowConstraints minHeight="30"/>
+                        </rowConstraints>
+                        <!-- Primera columna de etiquetas y campos -->
+                        <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <TextField fx:id="nombreField" promptText="Nombre del producto"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                        <Label text="Código:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                        <TextField fx:id="codigoField" promptText="Código único"
+                                   GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+
+                        <Label text="Categoría ID:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        <TextField fx:id="categoriaField" promptText="ID de categoría"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                        <Label text="Proveedor ID:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                        <TextField fx:id="proveedorField" promptText="ID de proveedor"
+                                   GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+                        <Label text="Precio:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                        <TextField fx:id="precioField" promptText="Precio unitario"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                        <Label text="Cantidad:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                        <TextField fx:id="cantidadField" promptText="Cantidad disponible"
+                                   GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+                    </GridPane>
+                </content>
+            </TitledPane>
+            <!-- Botones de acción -->
+            <HBox spacing="10">
+                <Button fx:id="guardarButton" text="Guardar" onAction="#guardarProducto"/>
+                <Button fx:id="eliminarButton" text="Eliminar" onAction="#eliminarProducto"/>
+                <Button fx:id="refrescarButton" text="Refrescar" onAction="#refrescarProductos"/>
+            </HBox>
+            <!-- Tabla de productos -->
+            <TableView fx:id="tablaProductos" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colNombre" text="Nombre" prefWidth="150"/>
+                    <TableColumn fx:id="colCodigo" text="Código" prefWidth="100"/>
+                    <TableColumn fx:id="colCategoria" text="Categoría ID" prefWidth="100"/>
+                    <TableColumn fx:id="colProveedor" text="Proveedor ID" prefWidth="100"/>
+                    <TableColumn fx:id="colPrecio" text="Precio" prefWidth="100"/>
+                    <TableColumn fx:id="colCantidad" text="Cantidad" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+    <!-- Mensaje de estado -->
+    <bottom>
+        <Label fx:id="estadoLabel" text="Listo.">
+		    <padding>
+		        <Insets top="10" right="10" bottom="10" left="10"/>
+		    </padding>
+		</Label>
+    </bottom>
+</BorderPane>
