@@ -1,127 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema de Inventario</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
-</head>
-<body>
-  <header>
-    <h1>Sistema de Inventario CB</h1>
-    <nav>
-      <ul>
-        <li><a href="#products">Productos</a></li>
-        <li><a href="#stock">Stock</a></li>
-        <li><a href="#providers">Proveedores</a></li>
-        <li><a href="#users">Usuarios</a></li>
-        <li><a href="#reports">Reportes</a></li>
-        <li><a href="#audit">Auditoría</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <main>
-  <h2>Bienvenido al Sistema de Inventario CB</h2>
-  <div class="grid-modulos">
-    <a href="productos.html" class="modulo">📦 Productos</a>
-    <a href="stock.html" class="modulo">📈 Stock</a>
-    <a href="proveedores.html" class="modulo">🚚 Proveedores</a>
-    <a href="usuarios.html" class="modulo">👤 Usuarios</a>
-    <a href="reportes.html" class="modulo">📊 Reportes</a>
-    <a href="auditoria.html" class="modulo">🕵️ Auditoría</a>
-  </div>
-</main>
-
-    <section id="products">
-      <h2>Gestión de Productos</h2>
-      <form id="productForm">
-        <input type="text" id="nombre" placeholder="Nombre del producto" required>
-        <input type="text" id="codigo" placeholder="Código" required>
-        <input type="number" id="id_categoria" placeholder="ID Categoría" required>
-        <input type="number" id="id_proveedor" placeholder="ID Proveedor" required>
-        <input type="number" id="precio" placeholder="Precio" required>
-        <input type="number" id="cantidad" placeholder="Cantidad" required>
-        <button type="submit" id="submitBtn">Registrar</button>
-      </form>
-
-      <table id="tablaProductos">
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Código</th>
-            <th>ID Categoría</th>
-            <th>ID Proveedor</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Aquí se insertan los productos dinámicamente -->
-        </tbody>
-      </table>
-    </section>
-
-    <section id="stock">
-      <h2>Control de Stock</h2>
-      <button onclick="registerStockEntry()">Registrar Entrada</button>
-      <button onclick="registerStockExit()">Registrar Salida</button>
-      <div id="stockNotifications"></div>
-    </section>
-
-    <section id="providers">
-      <h2>Gestión de Proveedores</h2>
-      <form id="providerForm">
-        <input type="text" name="providerName" placeholder="Nombre del proveedor">
-        <input type="text" name="contact" placeholder="Contacto">
-        <button type="submit">Registrar</button>
-      </form>
-      <div id="providerList"></div>
-    </section>
-
-    <section id="users">
-      <h2>Gestión de Usuarios y Roles</h2>
-      <form id="userForm">
-        <input type="text" name="username" placeholder="Nombre de usuario">
-        <select name="role">
-          <option value="admin">Administrador</option>
-          <option value="employee">Empleado</option>
-          <option value="supervisor">Supervisor</option>
-        </select>
-        <button type="submit">Crear Usuario</button>
-      </form>
-      <div id="userList"></div>
-    </section>
-
-    <section id="reports">
-      <h2>Generación de Reportes</h2>
-      <button onclick="generateReport('ventas')">Productos más vendidos</button>
-      <button onclick="generateReport('bajoStock')">Productos con bajo stock</button>
-      <div id="reportOutput"></div>
-    </section>
-
-    <section id="audit">
-      <h2>Auditoría de Movimientos</h2>
-      <div id="auditLog"></div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Sistema de Inventario</p>
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Inventario CB</title>
+    <!-- Cargar React y ReactDOM desde CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel para compilar JSX en el navegador-->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Lógica de React-->
+    <script type="text/babel" src="app.js"></script>
+  </body>
 </html>
-<nav>
-  <ul class="nav">
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="productos.html">Productos</a></li>
-    <li><a href="stock.html">Stock</a></li>
-    <li><a href="proveedores.html">Proveedores</a></li>
-    <li><a href="usuarios.html">Usuarios</a></li>
-    <li><a href="reportes.html">Reportes</a></li>
-    <li><a href="auditoria.html">Auditoría</a></li>
-  </ul>
-</nav>

@@ -1,16 +1,14 @@
 {
-  "name": "backend",
+  "name": "inventario-backend",
   "version": "1.0.0",
-  "main": "app.js",
+  "description": "API RESTful para Sistema de Inventario CB",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "express": "^5.1.0",
-    "mysql2": "^3.14.1"
+    "express": "^4.18.2",
+    "mysql2": "^2.3.3",
+    "cors": "^2.8.5"
   }
 }
